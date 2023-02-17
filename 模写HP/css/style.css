@@ -1,0 +1,466 @@
+@charset "UTF-8";
+
+body {
+  color: #333;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 16px;
+}
+a {
+  color: #333;
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+.wrapper {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+.wrapper-2 {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+
+/* HEADER */
+header {
+  width: 100%;
+  height: 132px;
+  position: fixed;
+  z-index: 29;
+  transition: .3s;
+}
+header .inner {
+  padding: 1em 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 30;
+  /* margin効かなかったけど、right0 left0 つけたらできた */
+}
+header.active {
+  background-color: #333;
+}
+
+
+header .logo {
+  display: flex;
+}
+
+header .logo img {
+  width: 100px;
+  height: 100px;
+}
+
+header .logo .logo-text {
+  color: #fff;
+  padding-left: 1rem;
+  font-family: serif;
+  font-size: 1.5rem;
+  text-align: right;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-direction: column;
+}
+header .logo .logo-text .logo-text1,
+header .logo .logo-text .logo-text2 {
+  color: #fff;
+}
+header .logo .logo-text .logo-text2 {
+  letter-spacing: .5em;
+}
+header .nav {
+  text-align: right;
+}
+header .nav .nav-title {
+  color: #fff;
+  padding: .3em 5em;
+  border: 1px solid #fff;
+  transition: .3s;
+}
+header .nav .nav-title:hover {
+  background-color: #333;
+  text-decoration: underline;
+}
+header.active .nav .nav-title:hover {
+  background-color: #000;
+}
+
+header .nav .nav-list {
+  display: flex;
+}
+header .nav .nav-list li {
+  padding: 0 .5em;
+  border-left: 1px solid #fff;
+}
+header .nav .nav-list li a {
+  color: #fff;
+  transition: .3s;
+}
+header .nav .nav-list li a:hover {
+  text-decoration: underline;
+}
+header .nav .nav-list .both-line {
+  border-right: 1px solid #fff;
+}
+
+/* HERO */
+
+
+/*1枚目*/
+@keyframes slide1 {
+	0% {opacity: 0;}
+	15% {opacity: 1;}
+	40% {opacity: 1;}
+	50% {opacity: 0;}
+	60% {opacity: 0;}
+	100% {opacity: 0;}
+}
+/*2枚目*/
+@keyframes slide2 {
+	0% {opacity: 0;}
+	25% {opacity: 0;}
+	35% {opacity: 1;}
+	75% {opacity: 1;}
+	80% {opacity: 1;}
+	100% {opacity: 0;}
+}
+/*3枚目*/
+@keyframes slide3 {
+	0% {opacity: 0;}
+	50% {opacity: 0;}
+	60% {opacity: 0;}
+  75% {opacity: 1;}
+	80% {opacity: 1;}
+	85% {opacity: 1;}
+	100% {opacity: 0;}
+}
+
+.slide000 {
+  background-image: url(../img/hero.jpg);
+  width: 100%;
+  height: 95vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+}
+.slide0 {
+  background-image: url(../img/hero.jpg);
+  width: 100%;
+  height: 95vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  animation: slide1 25s infinite cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.slide1 {
+  background-image: url(../img/hero2.jpg);
+  width: 100%;
+  height: 95vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  animation: slide2 25s infinite cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.slide2 {
+  background-image: url(../img/hero3.jpg);
+  width: 100%;
+  height: 95vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  animation: slide3 25s infinite cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+
+.hero-title {
+  color: #fff;
+  font-size: 1em;
+  writing-mode: vertical-rl;
+  letter-spacing: .4em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* MAIN */
+section h1 {
+  text-align: center;
+  letter-spacing: .3em;
+  margin: 3em 0 0 0;
+}
+section p {
+  text-align: center;
+  margin: .01em 0 0 0;
+}
+/* CONTENT */
+table.wrapper-2 {
+  margin: 3em auto;
+}
+table.wrapper-2 tr {
+  border-bottom: 0.1px dashed rgba(0, 0, 0, .7);
+}
+table.wrapper-2 th {
+  width: 100px;
+}
+table.wrapper-2 td {
+  width: 90%;
+  padding: 1em 0;
+  font-family: serif;
+}
+table.wrapper-2 td a:hover {
+  text-decoration: underline;
+}
+
+/* BTN */
+.btn {
+  margin: 0 auto;
+  text-align: center;
+  max-width: 220px;
+  background-color: #000;
+  padding: 1em .5em;
+  border: 2px solid #000;
+  position: relative;
+  cursor: pointer;
+}
+.btn .btn-text {
+  color: #fff;
+  font-size: 0.9em;
+}
+.btn .btn-text::after {
+  content: '\f054';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  text-decoration: none;
+}
+.btn:hover {
+  background-color: transparent;
+}
+.btn:hover a {
+  color: #000;
+  text-decoration: underline;
+}
+
+
+/* SECTION2 */
+.section2-headline {
+  text-align: center;
+  writing-mode: vertical-rl;
+  margin: 5em auto 2em;
+  font-family: serif;
+}
+.section2-text {
+  font-size: 0.9em;
+  font-family: serif;
+  margin-bottom: 3em;
+}
+.section2.wrapper {
+  margin-bottom: 5em;
+}
+
+/* SECTION3 */
+
+.background-color {
+  background-color: #ddd;
+  padding-bottom: 3em;
+}
+.background-color .text {
+  margin: 2em 0 2em;
+}
+.article-item {
+  display: flex;
+  justify-content: space-between;
+}
+.article-item > li {
+  width: 32%;
+  list-style: none;
+  height: 100%;
+}
+.article-item > li a {
+  display: block;
+  background-color: #fff;
+  box-shadow: 0 0 5px #333;
+}
+.article-item > li a:hover .thumbnail img {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+.article-item > li .thumbnail {
+  height: 180px;
+  overflow: hidden;
+  position: relative;
+}
+.article-item > li .thumbnail img {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: .3s ;
+}
+.article-item > li h2 {
+  font-size: 1.2em;
+  font-weight: normal;
+  text-align: center;
+}
+.article-item > li h2::after {
+  content: '\f054';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+}
+
+/* SECTION4  */
+
+.article-item.second {
+  display: grid;
+  grid-template-columns: repeat(4,auto);
+  grid-template-rows: repeat(2,auto);
+  gap: 15px;
+}
+.article-item.second > li {
+  width: 100%;
+}
+.article-item.second li .thumbnail {
+  height: 180px;
+  overflow: hidden;
+  position: relative;
+}
+.article-item.second li .thumbnail img {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%; 
+  transform: translate(-50%,-50%); 
+  transition: 0.3s;
+}
+.btn.section4 {
+  margin-top: 4em;
+  margin-bottom: 3em;
+}
+
+/* SECTION5 */
+
+.section5 ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  padding-top: 3em;
+}
+.section5 ul li {
+  width: 47%;
+  position: relative;
+}
+.section5 ul li img {
+  width: 100%;
+  height: 10em;
+  object-fit: cover;
+  object-position: center;
+  filter: blur(2px);
+  transition: .2s;
+}
+.section5 ul li img:hover {
+  filter: blur(0);
+}
+.section5 .texttext {
+  position: absolute;
+  margin: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.texttext h1 {
+  margin: 0;
+  white-space: nowrap;
+}
+
+/* FOOTER */
+section.wrapper {
+  max-width: 1000px;
+  width: 100%;
+  margin: 5em auto;
+}
+.com-description {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.com-description img {
+  width: 50px;
+  height: 50px;
+}
+.com {
+  margin-left: 0.5em;
+}
+.com-name {
+  margin-left: 0.1em;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.com-description::after {
+  border-top: 1px solid #000;
+  content:'';
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 80%;
+}
+
+.wrapper.com-description-home {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+  margin-top: 0px;
+}
+
+.com-description-second .com-items h3 {
+  display: inline-block;
+  padding: 0 .5em;
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+  font-weight: normal;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.com-description-second .com-items > p {
+  color: gray;
+  display: block;
+  font-size: 14px;
+  font-weight: lighter;
+  text-align: left;
+}
+
+.com-description-second .com-items > p:nth-last-of-type(1) {
+  margin-bottom: 10px;
+}
+
+/* FOOTER */ 
+
+footer {
+  width: 100%;
+  background-color: #333;
+  color: #ddd;
+  font-weight: lighter;
+  text-align: right;
+  padding: 5px;
+}
+
+
